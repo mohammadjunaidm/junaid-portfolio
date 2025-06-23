@@ -198,6 +198,52 @@
         grid-template-columns: 1fr;
       }
     }
+
+    .resume-download {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.resume-btn {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--text);
+  text-decoration: none;
+  padding: 0.8em 1.5em;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.resume-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, var(--secondary), var(--primary));
+}
+
+.download-icon {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+}
+
+@media (max-width: 768px) {
+  .resume-download {
+    position: static;
+    text-align: center;
+    margin-bottom: 2em;
+  }
+  
+  .resume-btn {
+    display: inline-flex;
+  }
+}
+    
   </style>
 </head>
   <div class="resume-download">
@@ -212,6 +258,16 @@
     <img src="https://github.com/mohammadjunaidm/junaid-portfolio/blob/main/junaid_pic.png?raw=true" alt="Junaid's photo" class="profile-img" />
   </header>
 
+  <div class="resume-download">
+    <a href="https://raw.githubusercontent.com/mohammadjunaidm/junaid-portfolio/main/junaid_resume.png" download="Mohammad_Junaid_Resume.png" class="resume-btn">
+      <svg class="download-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="7 10 12 15 17 10"/>
+        <line x1="12" y1="15" x2="12" y2="3"/>
+       </svg>
+      Download Resume
+    </a>
+  </div>
   <div class="contact-links">
     <a href="mailto:mohammadjunaidofficial@gmail.com" class="contact-link">📧 Email</a>
     <a href="https://linkedin.com/in/mohammad-junaid-9ab018185" class="contact-link">💼 LinkedIn</a>
