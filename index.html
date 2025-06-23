@@ -2,44 +2,139 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>M. Mohammad Junaid – Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body { font-family: sans-serif; max-width: 900px; margin: auto; padding: 2em; line-height: 1.6; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      max-width: 900px;
+      margin: auto;
+      padding: 2em;
+      line-height: 1.6;
+      background-color: #f7f9fc;
+      color: #222;
+    }
     h1, h2 { color: #0a5e9a; }
-    .project { border-bottom: 1px solid #ccc; padding: 1em 0; }
+    .hero {
+      text-align: center;
+      padding: 2em 1em;
+      background: linear-gradient(to right, #0a5e9a, #005c97);
+      color: white;
+      border-radius: 12px;
+      margin-bottom: 2em;
+    }
+    .hero h1 { margin: 0; font-size: 2em; }
+    .hero p { font-size: 1.2em; margin-top: 0.5em; }
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+      margin: 1em auto;
+      display: block;
+    }
+    .projects {
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+    }
+    .project {
+      border: 1px solid #ddd;
+      padding: 1.5em;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
+    }
+    .project h3 { margin-top: 0; }
     .meta { font-size: 0.9em; color: #555; }
+    section {
+      margin-top: 3em;
+    }
+    .resume-img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    .resume-download {
+      text-align: center;
+      margin-top: 1em;
+    }
+    .resume-download a {
+      padding: 10px 20px;
+      background-color: #0a5e9a;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    ul.achievements {
+      padding-left: 1.2em;
+      line-height: 1.8;
+    }
+    ul.achievements li {
+      margin-bottom: 0.8em;
+    }
+    @media (max-width: 600px) {
+      body { padding: 1em; }
+      .hero h1 { font-size: 1.4em; }
+      .hero p { font-size: 1em; }
+    }
   </style>
 </head>
 <body>
-  <h1>M. Mohammad Junaid</h1>
-  <p>Product Management Analyst (DevOps) | Telus International<br/>
-     <a href="mailto:mohammadjunaidofficial@gmail.com">mohammadjunaidofficial@gmail.com</a> |
-     <a href="https://linkedin.com/in/mohammad-junaid-9ab018185">LinkedIn</a>
+  <header class="hero">
+    <h1>Hi, I'm M. Mohammad Junaid</h1>
+    <p>Building automated workflows, DevOps systems, and real-time dashboards that scale 🚀</p>
+  </header>
+
+  <img src="your-photo.jpg" alt="Junaid's photo" class="profile-img" />
+
+  <p style="text-align:center;">
+    <a href="mailto:mohammadjunaidofficial@gmail.com">mohammadjunaidofficial@gmail.com</a> |
+    <a href="https://linkedin.com/in/mohammad-junaid-9ab018185">LinkedIn</a>
   </p>
 
   <h2>🌟 Featured Projects</h2>
+  <div class="projects">
+    <div class="project">
+      <h3>Zoho Desk to Linear Ticket Escalation</h3>
+      <p><strong>Tools:</strong> Zoho Flow, Deluge, GraphQL, Linear API</p>
+      <p>Automated the flow of escalated Zoho Desk tickets to Linear by triggering a custom function that maps ticket metadata to Linear issue fields. Optimized handoff between support and engineering with dynamic issue creation and label assignment.</p>
+      <p class="meta">Dec 2023 – Present</p>
+    </div>
 
-  <div class="project">
-    <h3>Zoho Desk to Linear Ticket Escalation</h3>
-    <p><strong>Tools:</strong> Zoho Flow, Deluge, GraphQL, Linear API</p>
-    <p>Automated the flow of escalated Zoho Desk tickets to Linear by triggering a custom function that maps ticket metadata to Linear issue fields. Optimized handoff between support and engineering with dynamic issue creation and label assignment.</p>
-    <p class="meta">Dec 2023 – Present</p>
+    <div class="project">
+      <h3>Real-Time Operational Dashboards with Retool</h3>
+      <p><strong>Tools:</strong> Retool, Render, SQL, APIs</p>
+      <p>Built and hosted interactive dashboards for incident monitoring and service health tracking, integrating real-time data from various systems.</p>
+    </div>
+
+    <div class="project">
+      <h3>Slack & ChatOps Notification System</h3>
+      <p><strong>Tools:</strong> Python (Flask), Slack API, Jenkins</p>
+      <p>Developed microservices to post live build and alert updates into Slack and Google Chat, improving incident communication and reducing MTTR.</p>
+    </div>
   </div>
 
-  <div class="project">
-    <h3>Real-Time Operational Dashboards with Retool</h3>
-    <p><strong>Tools:</strong> Retool, Render, SQL, APIs</p>
-    <p>Built and hosted interactive dashboards for incident monitoring and service health tracking, integrating real-time data from various systems.</p>
-  </div>
+  <section>
+    <h2>🏆 Key Achievements at Telus International</h2>
+    <ul class="achievements">
+      <li><strong>Designed and built real-time integrations</strong> between Slack, Google Chat, ServiceNow, and Linear using Python Flask APIs for automated incident escalation and communication.</li>
+      <li><strong>Implemented CI/CD pipelines</strong> using Jenkins and Docker to automate containerized app deployments across environments.</li>
+      <li><strong>Developed and hosted real-time dashboards</strong> on Render with Retool, giving teams instant visibility into service health and operational KPIs.</li>
+      <li><strong>Led backend automation efforts</strong> involving SQL-based data validation, recovery workflows, and config management via APIs.</li>
+      <li><strong>Monitored infrastructure proactively</strong> using Datadog and Grafana, ensuring high availability and reducing mean time to recovery (MTTR).</li>
+    </ul>
+  </section>
 
-  <div class="project">
-    <h3>Slack & ChatOps Notification System</h3>
-    <p><strong>Tools:</strong> Python (Flask), Slack API, Jenkins</p>
-    <p>Developed microservices to post live build and alert updates into Slack and Google Chat, improving incident communication and reducing MTTR.</p>
-  </div>
-
-  <h2>📜 Resume</h2>
-  <p><a href="junaid_resume.png" download> Download my resume</a></p>
+  <section>
+    <h2>📜 Resume</h2>
+    <p>Below is a preview of my resume. For full size, right-click and open in a new tab.</p>
+    <img src="junaid_resume.png" alt="Resume" class="resume-img" />
+    <div class="resume-download">
+      <a href="junaid_resume.png" download>⬇️ Download Resume (PNG)</a>
+    </div>
+  </section>
 </body>
 </html>
