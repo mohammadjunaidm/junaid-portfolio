@@ -3,179 +3,234 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>M. Mohammad Junaid – Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <title>M. Mohammad Junaid – TELUS Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
   <style>
+    :root {
+      --primary: #6366f1;
+      --secondary: #3b82f6;
+      --background: #0a0a0f;
+      --card-bg: #1a1a23;
+      --text: #e2e8f0;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     html {
       scroll-behavior: smooth;
     }
+
     body {
       font-family: 'Inter', sans-serif;
-      max-width: 960px;
+      max-width: 1200px;
       margin: auto;
       padding: 2em;
-      background-color: #0f172a;
-      color: #f1f5f9;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 100% 100%, #2563eb22 0%, transparent 50%),
+        radial-gradient(circle at 0% 0%, #6366f122 0%, transparent 50%);
+      min-height: 100vh;
     }
+
     h1, h2, h3 {
-      color: #38bdf8;
+      font-family: 'Poppins', sans-serif;
+      color: var(--primary);
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
+
     .hero {
       text-align: center;
-      padding: 2em 1em;
-      background: linear-gradient(to right, #1e3a8a, #0ea5e9);
-      color: white;
-      border-radius: 16px;
+      padding: 4em 2em;
+      background: linear-gradient(135deg, #1e1e2d80, #2a2a3a80);
+      backdrop-filter: blur(10px);
+      border-radius: 24px;
       margin-bottom: 3em;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      box-shadow: 
+        0 20px 40px rgba(0,0,0,0.4),
+        inset 0 1px 2px rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.1);
+      transform-style: preserve-3d;
+      perspective: 1000px;
     }
+
     .hero h1 {
-      margin: 0;
-      font-size: 2.2em;
+      font-size: 3em;
+      margin-bottom: 0.5em;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     }
-    .hero p {
-      font-size: 1.2em;
-      margin-top: 0.5em;
-    }
+
     .profile-img {
-      width: 120px;
-      height: 120px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
-      box-shadow: 0 0 12px rgba(0,0,0,0.5);
-      margin: 1.5em auto;
+      box-shadow: 
+        0 10px 20px rgba(0,0,0,0.3),
+        0 0 0 8px var(--card-bg),
+        0 0 0 9px var(--primary);
+      margin: 2em auto;
       display: block;
-      border: 3px solid #38bdf8;
+      transform: translateZ(30px);
+      transition: transform 0.3s ease;
     }
-    .projects {
+
+    .profile-img:hover {
+      transform: translateZ(50px) scale(1.1);
+    }
+
+    .achievements-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2em;
+      margin-top: 2em;
     }
-    .project {
-      background-color: #1e293b;
-      padding: 1.5em;
-      border-radius: 12px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.25);
-      transition: transform 0.2s ease;
+
+    .achievement-card {
+      background: var(--card-bg);
+      padding: 2em;
+      border-radius: 16px;
+      box-shadow: 
+        0 10px 30px rgba(0,0,0,0.3),
+        inset 0 1px 2px rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: transform 0.3s ease;
+      transform-style: preserve-3d;
     }
-    .project:hover {
-      transform: translateY(-5px);
+
+    .achievement-card:hover {
+      transform: translateY(-10px) rotateX(5deg);
     }
-    .project h3 {
-      margin-top: 0;
-    }
-    .meta {
-      font-size: 0.9em;
-      color: #94a3b8;
-    }
-    section {
-      margin-top: 4em;
-    }
-    .resume-img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-    }
-    .resume-download {
-      text-align: center;
-      margin-top: 1.5em;
-    }
-    .resume-download a {
-      padding: 10px 24px;
-      background-color: #0ea5e9;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 600;
-      box-shadow: 0 6px 12px rgba(14,165,233,0.3);
-    }
-    ul.achievements {
-      background-color: #1e293b;
-      padding: 1.5em;
-      border-radius: 12px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-      list-style: none;
-    }
-    ul.achievements li {
+
+    .achievement-card h3 {
+      font-size: 1.5em;
       margin-bottom: 1em;
-      position: relative;
-      padding-left: 1.5em;
     }
-    ul.achievements li::before {
-      content: "✔";
-      position: absolute;
-      left: 0;
-      color: #38bdf8;
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5em;
+      margin: 1em 0;
     }
-    a {
-      color: #38bdf8;
+
+    .tech-tag {
+      background: rgba(99, 102, 241, 0.1);
+      padding: 0.3em 0.8em;
+      border-radius: 20px;
+      font-size: 0.9em;
+      color: var(--primary);
+      border: 1px solid var(--primary);
     }
-    @media (max-width: 600px) {
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      margin: 2em 0;
+    }
+
+    .contact-link {
+      color: var(--text);
+      text-decoration: none;
+      padding: 0.8em 1.5em;
+      border-radius: 8px;
+      background: var(--card-bg);
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .contact-link:hover {
+      background: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    @media (max-width: 768px) {
       body {
         padding: 1em;
       }
+      
       .hero h1 {
-        font-size: 1.5em;
+        font-size: 2em;
       }
-      .hero p {
-        font-size: 1em;
+      
+      .achievements-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
-  <header class="hero">
-    <h1>Hi, I'm M. Mohammad Junaid</h1>
-    <p>Building automated workflows, DevOps systems, and real-time dashboards that scale 🚀</p>
+  <header class="hero" data-tilt data-tilt-max="5">
+    <h1>M. Mohammad Junaid</h1>
+    <p>Technical Support Engineer II at TELUS International</p>
+    <img src="your-photo.jpg" alt="Junaid's photo" class="profile-img" />
   </header>
 
-  <img src="your-photo.jpg" alt="Junaid's photo" class="profile-img" />
+  <div class="contact-links">
+    <a href="mailto:mohammadjunaidofficial@gmail.com" class="contact-link">📧 Email</a>
+    <a href="https://linkedin.com/in/mohammad-junaid-9ab018185" class="contact-link">💼 LinkedIn</a>
+  </div>
 
-  <p style="text-align:center;">
-    <a href="mailto:mohammadjunaidofficial@gmail.com">mohammadjunaidofficial@gmail.com</a> |
-    <a href="https://linkedin.com/in/mohammad-junaid-9ab018185">LinkedIn</a>
-  </p>
-
-  <h2>🌟 Featured Projects</h2>
-  <div class="projects">
-    <div class="project">
-      <h3>Zoho Desk to Linear Ticket Escalation</h3>
-      <p><strong>Tools:</strong> Zoho Flow, Deluge, GraphQL, Linear API</p>
-      <p>Automated the flow of escalated Zoho Desk tickets to Linear by triggering a custom function that maps ticket metadata to Linear issue fields. Optimized handoff between support and engineering with dynamic issue creation and label assignment.</p>
-      <p class="meta">Dec 2023 – Present</p>
+  <h2>Achievements at TELUS International</h2>
+  <div class="achievements-grid">
+    <div class="achievement-card" data-tilt data-tilt-max="10">
+      <h3>Integration & Automation</h3>
+      <p>Developed and implemented cross-platform integrations between Slack, Google Chat, ServiceNow, and Linear using Python Flask APIs.</p>
+      <div class="tech-stack">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Flask</span>
+        <span class="tech-tag">APIs</span>
+        <span class="tech-tag">Slack</span>
+      </div>
     </div>
 
-    <div class="project">
-      <h3>Real-Time Operational Dashboards with Retool</h3>
-      <p><strong>Tools:</strong> Retool, Render, SQL, APIs</p>
-      <p>Built and hosted interactive dashboards for incident monitoring and service health tracking, integrating real-time data from various systems.</p>
+    <div class="achievement-card" data-tilt data-tilt-max="10">
+      <h3>CI/CD Implementation</h3>
+      <p>Built and maintained CI/CD pipelines using Jenkins and Docker for automated deployments across multiple environments.</p>
+      <div class="tech-stack">
+        <span class="tech-tag">Jenkins</span>
+        <span class="tech-tag">Docker</span>
+        <span class="tech-tag">CI/CD</span>
+      </div>
     </div>
 
-    <div class="project">
-      <h3>Slack & ChatOps Notification System</h3>
-      <p><strong>Tools:</strong> Python (Flask), Slack API, Jenkins</p>
-      <p>Developed microservices to post live build and alert updates into Slack and Google Chat, improving incident communication and reducing MTTR.</p>
+    <div class="achievement-card" data-tilt data-tilt-max="10">
+      <h3>Real-time Dashboards</h3>
+      <p>Created and deployed real-time operational dashboards using Retool and Render for service health monitoring.</p>
+      <div class="tech-stack">
+        <span class="tech-tag">Retool</span>
+        <span class="tech-tag">Render</span>
+        <span class="tech-tag">SQL</span>
+      </div>
+    </div>
+
+    <div class="achievement-card" data-tilt data-tilt-max="10">
+      <h3>Infrastructure Monitoring</h3>
+      <p>Implemented proactive monitoring solutions using Datadog and Grafana, reducing MTTR significantly.</p>
+      <div class="tech-stack">
+        <span class="tech-tag">Datadog</span>
+        <span class="tech-tag">Grafana</span>
+        <span class="tech-tag">Monitoring</span>
+      </div>
     </div>
   </div>
 
-  <section>
-    <h2>🏆 Key Achievements at Telus International</h2>
-    <ul class="achievements">
-      <li><strong>Designed and built real-time integrations</strong> between Slack, Google Chat, ServiceNow, and Linear using Python Flask APIs for automated incident escalation and communication.</li>
-      <li><strong>Implemented CI/CD pipelines</strong> using Jenkins and Docker to automate containerized app deployments across environments.</li>
-      <li><strong>Developed and hosted real-time dashboards</strong> on Render with Retool, giving teams instant visibility into service health and operational KPIs.</li>
-      <li><strong>Led backend automation efforts</strong> involving SQL-based data validation, recovery workflows, and config management via APIs.</li>
-      <li><strong>Monitored infrastructure proactively</strong> using Datadog and Grafana, ensuring high availability and reducing mean time to recovery (MTTR).</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>📜 Resume</h2>
-    <p>Below is a preview of my resume. For full size, right-click and open in a new tab.</p>
-    <img src="junaid_resume.png" alt="Resume" class="resume-img" />
-    <div class="resume-download">
-      <a href="junaid_resume.png" download>⬇️ Download Resume (PNG)</a>
-    </div>
-  </section>
+  <script>
+    VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+      max: 10,
+      speed: 400,
+      glare: true,
+      "max-glare": 0.3,
+    });
+  </script>
 </body>
 </html>
